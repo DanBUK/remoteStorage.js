@@ -113,11 +113,12 @@ define([], function() {
   }
   function parseXmlBrowser(str, cb) {
     var tree=(new DOMParser()).parseFromString(str, 'text/xml')
-    cb(null, {});
+    var link=tree.getElementsByTagName('Link')[0];
+    cb(null, {Link: link});
   }
   function parseXmlNode(str, cb) {
     var xml2js=require('xml2js');
-    new xml2js.Parser().parseString(str, cb);
+    new xml2js. arser().parseString(str, cb);
   }
   if(typeof(window) === 'undefined') {
     return {
